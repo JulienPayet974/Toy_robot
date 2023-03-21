@@ -76,7 +76,7 @@ class ToyRobot {
         this.direction = this.directions[index];
     }
 
-    //Signaler la position du robot
+    //Affiche la position du robot
     report() {
         if (this.x !== null && this.y !== null && this.direction !== null) {
             console.log(`${this.x},${this.y},${this.direction}`);
@@ -85,13 +85,15 @@ class ToyRobot {
 
     // Exécution des commandes
     executeCommand(command) {
+
+        //décomposition de la commande
         const [action, args] = command.split(" ");
         switch (action) {
             // Si l'action est "PLACE" alors on exécute
             case "PLACE":
-                //New tableau valeurs converties en nombre
+                //New tableau avec valeurs converties en nombre
                 const [x, y, direction] = args.split(",").map((arg, i) => (i < 2 ? parseInt(arg) : arg));
-                //retourne les valeurs       
+                //retourne les valeurs et la direction    
                 this.place(x, y, direction);
                 break;
             // Si l'action est "MOVE" alors on exécute
