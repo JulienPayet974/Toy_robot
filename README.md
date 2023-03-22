@@ -48,7 +48,7 @@ RIGHT and REPORT commands.
 
 ● Provide test data to exercise the application.
 
-#Constraints
+# Constraints
 
 ● The toy robot must not fall off the table during movement. This also includes
 the initial placement of the toy robot.
